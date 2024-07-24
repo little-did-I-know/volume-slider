@@ -6,13 +6,23 @@ build-backend = "setuptools.build_meta"
 name = "volume-slider"
 version = "0.0.1"
 authors = [
-  { name="Robin Mumm", email="author@example.com" },
+  { name="Robin Mumm", email="johndoh@gmail.com" },
 ]
-description = "A small example package"
+description = "A minimal python program to control"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
+    "License :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+  "pycaw == 20240210",
+  "numpy",
+  "pyyaml >= 6.0.0",
+  "pyserial"
+]
+
+[project.urls]
+Homepage = "https://github.com/little-did-I-know/volume-slider"
+Issues = "https://github.com/little-did-I-know/volume-slider/issues"

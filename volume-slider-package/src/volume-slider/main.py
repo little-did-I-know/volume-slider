@@ -7,7 +7,11 @@ from pycaw.pycaw import AudioUtilities
 
 class VolumeController():
     def __init__(self):
+        """
+        Set up the Volume Controller object
+        """
 
+        # Load config file
         with open("config.yaml", 'r') as file:
             self.config = yaml.safe_load(file)
 
@@ -15,6 +19,11 @@ class VolumeController():
         self.setup_serial_connection()
 
     def reload(self):
+        """
+        Reloads the config file and then updates the slider programs, this is done so you can update the config file
+        and have the program accept those changes without having to restart.
+        :return:
+        """
         try:
             with open("config.yaml", 'r') as file:
                 self.config = yaml.safe_load(file)
@@ -23,40 +32,51 @@ class VolumeController():
         self.setup_sliders()
 
     def setup_sliders(self):
-        self.slider1_program = self.config['sliders']["slider1"]
-        self.slider2_program = self.config['sliders']["slider2"]
-        self.slider3_program = self.config['sliders']["slider3"]
-        self.slider4_program = self.config['sliders']["slider4"]
+        """
+        Sets up the slider programs based on the config file.
+        :return:
+        """
+
+        self.slider_programs = []
+        for slider in self.config['sliders']:
+            self.slider_programs.append(self.config['sliders'][slider])
 
     def setup_serial_connection(self):
+        """
+        Sets up the serial communication parameters
+        :return:
+        """
         self.com_port = self.config['COMPort']
-        self.baud_rate = 115200
+        self.baud_rate = self.config['Baud']
 
     def read_slider_values(self):
+        """
+        Uses a context manager to communicate with the Arduino on the give com port.
+        :return:
+        """
         with serial.Serial(self.com_port, self.baud_rate) as ser:
             val = str(ser.readline()).replace("b'", "").replace("\\r\\n", "").strip().split("|")
         return val
 
 
     def run(self):
+        """
+
+        :return:
+        """
         while True:
             self.reload()
             sessions = AudioUtilities.GetAllSessions()
             for session in sessions:
                 volume = session.SimpleAudioVolume
                 slider_values = self.read_slider_values()
-                if session.Process and session.Process.name() in self.slider1_program:
-                    vol = np.interp(slider_values[0], [0, 4095], [0, 1])
-                    volume.SetMasterVolume(vol, None)
-                if session.Process and session.Process.name() in self.slider2_program:
-                    vol = np.interp(slider_values[1], [0, 4095], [0, 1])
-                    volume.SetMasterVolume(vol, None)
-                if session.Process and session.Process.name() in self.slider3_program:
-                    vol = np.interp(slider_values[2], [0, 4095], [0, 1])
-                    volume.SetMasterVolume(vol, None)
-                if session.Process and session.Process.name() in self.slider4_program:
-                    vol = np.interp(slider_values[3], [0, 4095], [0, 1])
-                    volume.SetMasterVolume(vol, None)
+                i = 0
+                for programs in self.slider_programs:
+                    if session.Process and session.Process.name() in programs:
+                        vol = np.interp(slider_values[i], [0, 4095], [0, 1])
+                        volume.SetMasterVolume(vol, None)
+                    i += 1
+
             time.sleep(self.config['UpdateSpeed'])
 
 if __name__ == "__main__":

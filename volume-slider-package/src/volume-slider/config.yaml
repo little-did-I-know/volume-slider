@@ -10,5 +10,7 @@ sliders:
     - "None"
 COMPort:
   "COM4"
+Baud:
+  115200
 UpdateSpeed:
   0.1
