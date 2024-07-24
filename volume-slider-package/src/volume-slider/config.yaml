@@ -1,0 +1,14 @@
+sliders:
+  slider1:
+    - "msedge.exe"
+  slider2:
+    - "Palworld.exe"
+    - "Palworld-Win64-Shipping.exe"
+  slider3:
+    - "None"
+  slider4:
+    - "None"
+COMPort:
+  "COM4"
+UpdateSpeed:
+  0.1
