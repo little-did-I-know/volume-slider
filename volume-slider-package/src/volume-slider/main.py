@@ -61,7 +61,7 @@ class VolumeController():
 
     def run(self):
         """
-
+        Runs the process for controlling volume of your applications
         :return:
         """
         while True:
