@@ -77,7 +77,8 @@ class VolumeController():
                         volume.SetMasterVolume(vol, None)
                     i += 1
 
-            time.sleep(self.config['UpdateSpeed'])
+            # Read update rate, tested and this speed works pretty well.
+            time.sleep(0.1)
 
 if __name__ == "__main__":
     volume_controller = VolumeController()

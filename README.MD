@@ -1,5 +1,12 @@
 # CURRENTLY UNDER DEVELOPMENT
 This project is currently under development and is subject to change.
+
+- [] Get Master Volume Working
+- [x] Get Application Volume Control Working
+- [x] Tested on Windows
+- [] Tested on Mac
+- [] Tested on Linux
+
 ### Goals of  the Project
 1. Open Source hardware and software
 2. No soldering required
@@ -40,6 +47,7 @@ Feel free to substitute hardware as you see fit, however other parts probably wo
 ### Wiring it up
 
 ![Wired Up](assets/Inside_wiring.jpg)
+![Wiring Diagram](assets/Wiring%20Diagram.png)
 
 ## Files
 - See the [assets](assets) folder for the step files for the 3d printed parts

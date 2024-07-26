@@ -156,3 +156,7 @@ cython_debug/
 
 #Pycharm Files
 .idea/
+
+
+# Random Files
+*.drawio

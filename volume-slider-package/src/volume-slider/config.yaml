@@ -1,16 +1,15 @@
 sliders:
   slider1:
-    - "msedge.exe"
+    - "master"
   slider2:
+    - "msedge.exe"
+    - "chrome.exe"
+  slider3:
     - "Palworld.exe"
     - "Palworld-Win64-Shipping.exe"
-  slider3:
-    - "None"
   slider4:
-    - "None"
+    - "discord.exe"
 COMPort:
   "COM4"
 Baud:
   115200
-UpdateSpeed:
-  0.1
