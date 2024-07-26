@@ -1,11 +1,11 @@
 # CURRENTLY UNDER DEVELOPMENT
 This project is currently under development and is subject to change.
 
-- [] Get Master Volume Working
-- [x] Get Application Volume Control Working
-- [x] Tested on Windows
-- [] Tested on Mac
-- [] Tested on Linux
+:x: Get Master Volume Working\
+:heavy_check_mark: Get Application Volume Control Working\
+:heavy_check_mark: Tested on Windows\
+:x: Tested on Mac\
+:x: Tested on Linux
 
 ### Goals of  the Project
 1. Open Source hardware and software
@@ -43,6 +43,7 @@ Feel free to substitute hardware as you see fit, however other parts probably wo
 6. [Wire Connectors](https://www.amazon.com/dp/B09VSYG3H5?ref=ppx_yo2ov_dt_b_product_details&th=1)
 7. 4 M4x8mm Machine Screws
 8. 4 M4 Threaded Inserts (M4x5mmx5mm)(Thread, Diameter, Height)
+   1. If you don't want to heat press the threaded insert you can try using a M5 plastic screw something like [this](https://www.mcmaster.com/90380A386/) 
 
 ### Wiring it up
 
