@@ -7,12 +7,21 @@ This project is currently under development and is subject to change.
 :x: Tested on Mac\
 :x: Tested on Linux
 
-### Goals of  the Project
+# Table of Contents
+1. [Goals of the Project](#Goals of the project)
+2. [Volume Slider Box](#Volume Slider Box)
+3. [Setup](#Setup)
+   1. [Software](#Software)
+   2. [Hardware](#Hardware)
+   3. [Wiring it up](#Wiring)
+4. [Files](#Files)
+
+### Goals of  the Project <a name="Goals of the project"></a>
 1. Open Source hardware and software
 2. No soldering required
 3. Easy control of application volume
 4. Customizable 
-## Volume Slider Box
+## Volume Slider Box <a name="Volume Slider Box"></a>
 ![Volume Slider Box](assets/Volume%20Slider%20Box%20Assembly%20V2%20Trimetric.PNG)
 ![SlideBoxWhiteTop](assets/white_top_box.jpg)
 A minimal python program that communicates with an Arduino Nano running a sketch that measures the value of a given
@@ -21,17 +30,17 @@ number of potentiometers. It then reports those values over a serial port to a p
 
 The current design is 192.5mm x 192.5mm x 44.5mm
 
-## Setup (Still Under Construction)
+## Setup (Still Under Construction) <a name="Setup"></a>
 > You will need a 3d printer to make the box
 
-### Software
+### Software <a name="Software"></a>
 1. [Python](https://www.python.org/downloads/)
 2. [Arduino IDE](https://www.arduino.cc/en/software)
 3. Slicer Program for your 3d printer, 
    1. I use [Bambu Studio](https://bambulab.com/en/download/studio)
    2. Another good one is [Orca Slicer](https://github.com/SoftFever/OrcaSlicer)
 
-### Hardware
+### Hardware <a name="Hardware"></a>
 Feel free to substitute hardware as you see fit, however other parts probably won't fit the current design.
 
 1. [Slider Potentiometer](https://www.amazon.com/dp/B0D2L6LJXC?psc=1&ref=ppx_yo2ov_dt_b_product_details)
@@ -44,11 +53,13 @@ Feel free to substitute hardware as you see fit, however other parts probably wo
 7. 4 M4x8mm Machine Screws
 8. 4 M4 Threaded Inserts (M4x5mmx5mm)(Thread, Diameter, Height)
    1. If you don't want to heat press the threaded insert you can try using a M5 plastic screw something like [this](https://www.mcmaster.com/90380A386/) 
-
-### Wiring it up
+   
+### Wiring it up <a name="Wiring"></a>
 
 ![Wired Up](assets/Inside_wiring.jpg)
 ![Wiring Diagram](assets/Wiring%20Diagram.png)
 
-## Files
+
+
+## Files <a name="Files"></a>
 - See the [assets](assets) folder for the step files for the 3d printed parts
